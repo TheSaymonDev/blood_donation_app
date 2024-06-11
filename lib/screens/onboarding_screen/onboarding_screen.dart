@@ -25,14 +25,14 @@ class OnboardingScreen extends StatelessWidget {
             children: [
               Text(
                 OnboardingData.screenData[index].title.tr,
-                style: Get.textTheme.titleLarge!.copyWith(color: whiteClr),
+                style: Get.textTheme.titleLarge!.copyWith(color: darkFontClr),
               ),
               Gap(24.h),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.r),
-                  color: whiteClr.withOpacity(0.3),
+                  color: lightBgClr.withOpacity(0.3),
                 ),
                 child: Image.asset(
                   OnboardingData.screenData[index].imgPath,
@@ -42,7 +42,7 @@ class OnboardingScreen extends StatelessWidget {
               Gap(24.h),
               Text(
                 OnboardingData.screenData[index].subTitle.tr,
-                style: Get.textTheme.bodyLarge!.copyWith(color: whiteClr),
+                style: Get.textTheme.bodyLarge!.copyWith(color: darkFontClr),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -51,7 +51,7 @@ class OnboardingScreen extends StatelessWidget {
         colors: OnboardingData.screenData.map((data) => data.color).toList(),
         nextButtonBuilder: (context) => const Icon(Icons.arrow_forward_ios),
         onFinish: (){
-          Get.offNamed(AppRoutes.homeScreen);
+          Get.offNamed(AppRoutes.mobileVerificationScreen);
         },
       ),
     );

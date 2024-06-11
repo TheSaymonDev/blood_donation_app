@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         translations: AppLocalization(),
         fallbackLocale: const Locale('en', 'US'),
-        initialRoute: AppRoutes.mobileVerificationScreen,
+        initialRoute: AppRoutes.onboardingScreen,
         getPages: AppPages.pages,
         initialBinding: AppInitialBindings(),
         theme: lightTheme,

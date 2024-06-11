@@ -24,13 +24,13 @@ class CustomElevatedButton extends StatelessWidget {
       height: height.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: redColor,
-            foregroundColor: whiteClr,
+            backgroundColor: primaryClr,
+            foregroundColor: lightBgClr,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.r)),
             padding: EdgeInsets.zero),
         onPressed: onPressed,
-        child: Text(name, style: Get.textTheme.titleMedium!.copyWith(color: whiteClr)),
+        child: Text(name, style: Get.textTheme.titleMedium!.copyWith(color: lightBgClr)),
       ),
     );
   }

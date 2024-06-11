@@ -17,17 +17,17 @@ class OnboardingData {
     OnboardingData(
         title: 'screen1Title',
         subTitle: 'screen1SubTitle',
-        imgPath: AppUrls.screen1Json,
+        imgPath: AppUrls.screen1Png,
         color: const Color(0xFF678CEC)),
     OnboardingData(
         title: 'screen2Title',
         subTitle: 'screen2SubTitle',
-        imgPath: AppUrls.screen2Json,
+        imgPath: AppUrls.screen2Png,
         color: const Color(0xFFE87A5D)),
     OnboardingData(
         title: 'screen3Title',
         subTitle: 'screen3SubTitle',
-        imgPath: AppUrls.screen3Json,
+        imgPath: AppUrls.screen3Png,
         color: const Color(0xFFF3B941))
   ];
 }
