@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class BloodDonor extends StatelessWidget {
+class AcceptedRequest extends StatelessWidget {
 
-   const BloodDonor({super.key});
+   const AcceptedRequest({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
         itemBuilder: (context, index) => Container(
-          height: 100,
-          color: Colors.green,
-        ),
-        separatorBuilder: (context, index) => Gap(8),
+              height: 100,
+              color: Colors.yellow,
+            ),
+        separatorBuilder: (context, index) => const Gap(8),
         itemCount: 20);
   }
 }

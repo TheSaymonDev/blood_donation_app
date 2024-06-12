@@ -7,8 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final void Function() onPressed;
   final String title;
-  final TabBar? tabBar;
-  const CustomAppBar({super.key, required this.onPressed, required this.title, this.tabBar});
+  const CustomAppBar({super.key, required this.onPressed, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +15,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       leading: IconButton(onPressed: onPressed, icon: Icon(Icons.arrow_back, size: 25.sp, color: lightBgClr)),
       title: Text(title,  style: Get.textTheme.titleMedium!.copyWith(color: lightBgClr)),
-      bottom: tabBar,
       toolbarHeight: preferredSize.height,
     );
   }
 
   @override
-  Size get preferredSize => tabBar != null ? Size.fromHeight(120.h) : Size.fromHeight(60.h);
+  Size get preferredSize => Size.fromHeight(60.h);
 }

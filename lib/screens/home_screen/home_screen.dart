@@ -66,8 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 iconData: FontAwesomeIcons.userTie, label: 'nav4')
           ],
         ),
-        appBar: CustomAppBar(
-            onPressed: () {}, title: _titles[controller.selectedIndex].tr),
+        // appBar: CustomAppBar(
+        //     onPressed: () {}, title: _titles[controller.selectedIndex].tr),
         body: CustomBackground(
             child: _screens.elementAt(controller.selectedIndex)),
       );

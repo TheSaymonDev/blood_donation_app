@@ -55,6 +55,10 @@ final Map<String, String> enUs = {
   'bloodSeeker': 'Blood Seeker',
   'bloodDonor': 'Blood Donor',
 
+  // For Request Screen
+  'myRequest': 'My Request',
+  'acceptedRequest': 'Accepted Request',
+
   // For Profile Screen
   'nearbyDonor': 'Nearby Donor',
   'donorGroup': 'Donor Group',
