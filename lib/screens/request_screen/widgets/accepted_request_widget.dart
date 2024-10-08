@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class BloodSeeker extends StatelessWidget {
+class AcceptedRequestWidget extends StatelessWidget {
 
-   const BloodSeeker({super.key});
+   const AcceptedRequestWidget({super.key});
 
 
 

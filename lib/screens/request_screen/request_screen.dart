@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:free_blood_donation/screens/request_screen/widgets/accepted_request.dart';
-import 'package:free_blood_donation/screens/request_screen/widgets/my_request.dart';
+import 'package:free_blood_donation/screens/request_screen/widgets/accepted_request_widget.dart';
+import 'package:free_blood_donation/screens/request_screen/widgets/my_request_widget.dart';
 import 'package:free_blood_donation/widgets/custom_sliver_appbar.dart';
 import 'package:get/get.dart';
 
@@ -47,8 +47,8 @@ class _RequestScreenState extends State<RequestScreen>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          MyRequest(),
-          AcceptedRequest(),
+          MyRequestWidget(),
+          AcceptedRequestWidget(),
         ],
       ),
     );

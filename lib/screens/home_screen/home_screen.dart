@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:free_blood_donation/routes/app_routes.dart';
 import 'package:free_blood_donation/screens/feed_screen/feed_screen.dart';
 import 'package:free_blood_donation/screens/history_screen/history_screen.dart';
 import 'package:free_blood_donation/screens/home_screen/controllers/bottom_nav_controller.dart';
@@ -8,7 +9,6 @@ import 'package:free_blood_donation/screens/profile_screen/profile_screen.dart';
 import 'package:free_blood_donation/screens/request_screen/request_screen.dart';
 import 'package:free_blood_donation/utils/app_colors.dart';
 import 'package:free_blood_donation/widgets/custom_app_bar.dart';
-import 'package:free_blood_donation/widgets/custom_background.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,11 +36,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BottomNavController>(builder: (controller) {
+      // Check if the current screen is Feed or Request to hide the app bar
+      bool hideAppBar =
+          controller.selectedIndex == 0 || controller.selectedIndex == 1;
       return Scaffold(
-        extendBodyBehindAppBar: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(AppRoutes.seekerPostScreen);
+          },
           mini: true,
           child: const Icon(Icons.add),
         ),
@@ -55,21 +59,23 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
                 padding: EdgeInsets.only(right: 8.w),
                 child: _buildNavigationDestination(
-                    iconData: FontAwesomeIcons.codePullRequest,
-                    label: 'nav2')),
+                    iconData: FontAwesomeIcons.codePullRequest, label: 'nav2')),
             Padding(
                 padding: EdgeInsets.only(left: 8.w),
                 child: _buildNavigationDestination(
-                    iconData: FontAwesomeIcons.clockRotateLeft,
-                    label: 'nav3')),
+                    iconData: FontAwesomeIcons.clockRotateLeft, label: 'nav3')),
             _buildNavigationDestination(
                 iconData: FontAwesomeIcons.userTie, label: 'nav4')
           ],
         ),
-        // appBar: CustomAppBar(
-        //     onPressed: () {}, title: _titles[controller.selectedIndex].tr),
-        body: CustomBackground(
-            child: _screens.elementAt(controller.selectedIndex)),
+        // Conditionally show app bar based on selected index
+        appBar: hideAppBar
+            ? null
+            : CustomAppBar(
+                onPressed: () {},
+                title: _titles[controller.selectedIndex].tr,
+              ),
+        body: _screens.elementAt(controller.selectedIndex),
       );
     });
   }

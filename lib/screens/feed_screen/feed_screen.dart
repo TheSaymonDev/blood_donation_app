@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:free_blood_donation/screens/feed_screen/widgets/blood_donor.dart';
-import 'package:free_blood_donation/screens/feed_screen/widgets/blood_seeker.dart';
+import 'package:free_blood_donation/screens/feed_screen/widgets/blood_donor_widget.dart';
+import 'package:free_blood_donation/screens/feed_screen/widgets/blood_seeker_widget.dart';
 import 'package:free_blood_donation/widgets/custom_sliver_appbar.dart';
 import 'package:get/get.dart';
 
@@ -45,9 +45,9 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
       ],
       body: TabBarView(
         controller: _tabController,
-        children: const [
-          BloodSeeker(),
-          BloodDonor(),
+        children:  [
+          BloodSeekerWidget(),
+          BloodDonorWidget(),
         ],
       ),
     );

@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.thesaymondev.freeblooddonation.free_blood_donation"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

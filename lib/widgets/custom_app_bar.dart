@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: primaryClr,
       leading: IconButton(onPressed: onPressed, icon: Icon(Icons.arrow_back, size: 25.sp, color: lightBgClr)),
       title: Text(title,  style: Get.textTheme.titleMedium!.copyWith(color: lightBgClr)),
       toolbarHeight: preferredSize.height,

@@ -42,12 +42,12 @@ final lightTheme = ThemeData(
             fontSize: 18.sp, fontWeight: FontWeight.bold, color: lightFontClr)),
         shadowColor: lightCardClr,
         backgroundColor: lightBgClr,
-        indicatorColor: primaryClr.withOpacity(0.5)),
+        indicatorColor: primaryClr.withValues(alpha: 0.5)),
     cardColor: lightCardClr,
   inputDecorationTheme: InputDecorationTheme(
-
     filled: true,
     fillColor: lightBgClr,
+    hintStyle: TextStyle(fontSize: 20.sp, color: lightBorderClr, fontFamily: 'Gumela Arabic', fontWeight: FontWeight.normal),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.r),
       borderSide: BorderSide(color: lightBorderClr, width: 1.w),
@@ -104,11 +104,12 @@ final darkTheme = ThemeData(
           fontSize: 18.sp, fontWeight: FontWeight.bold, color: darkFontClr)),
       shadowColor: darkBgClr,
       backgroundColor: darkCardClr,
-      indicatorColor: primaryClr.withOpacity(0.5)),
+      indicatorColor: primaryClr.withValues(alpha: 0.5)),
   cardColor: darkCardClr,
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: darkBgClr,
+      hintStyle: TextStyle(fontSize: 15.sp, color: Colors.red, fontFamily: 'Gumela Arabic', fontWeight: FontWeight.normal),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.r),
         borderSide: BorderSide(color: darkBorderClr, width: 1.w),

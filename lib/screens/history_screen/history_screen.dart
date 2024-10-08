@@ -10,7 +10,7 @@ class HistoryScreen extends StatelessWidget {
     return Container(
       height: double.infinity.h,
       width: double.infinity.w,
-      padding: EdgeInsets.only(top: 90.h, left: 16.w, right: 16.w),
+      padding: EdgeInsets.only(top: 12.h, left: 16.w, right: 16.w),
       child: SingleChildScrollView(
         child: Column(
           children: [

@@ -9,6 +9,18 @@ class SharedPreferencesService{
     _prefs = await SharedPreferences.getInstance();
   }
 
+  void saveUserData(Map<String, dynamic> userData) {
+    _prefs.setString('token', userData['data']['accessToken'] ?? '');
+  }
+
+  String getToken() {
+    return _prefs.getString('token') ?? '';
+  }
+
+  void clearUserData() {
+    _prefs.remove('token');
+  }
+
   void saveTheme(String theme) {
     _prefs.setString('themeKey', theme);
   }

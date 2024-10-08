@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class CustomTextFormField extends StatelessWidget {
 
@@ -13,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final TextInputType? keyBoardType;
   final int? maxLines;
+  final void Function()? onTap;
 
   const CustomTextFormField({
     super.key,
@@ -25,14 +25,15 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.keyBoardType,
     this.maxLines = 1,
+    this.onTap
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      //style: Get.textTheme.bodyMedium,
+      onTap: onTap,
+     style: Theme.of(context).textTheme.bodyMedium,
       controller: controller,
-      //cursorColor: Get.theme.colorScheme.onSurface,
       readOnly: readOnly,
       obscureText: obscureText,
       validator: validator,
@@ -40,24 +41,9 @@ class CustomTextFormField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hintText,
-       // hintStyle: Get.textTheme.bodyMedium,
-        // fillColor: Get.theme.scaffoldBackgroundColor,
-        // filled: true,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
-        // border: OutlineInputBorder(
-        //   borderRadius: BorderRadius.circular(8.r),
-        //   borderSide: BorderSide(color: Get.theme.colorScheme.onPrimary, width: 1.w),
-        // ),
-        // enabledBorder: OutlineInputBorder(
-        //   borderRadius: BorderRadius.circular(8.r),
-        //   borderSide: BorderSide(color: Get.theme.colorScheme.onPrimary, width: 1.w),
-        // ),
-        // focusedBorder: OutlineInputBorder(
-        //   borderRadius: BorderRadius.circular(8.r),
-        //   borderSide: BorderSide(color: Get.theme.colorScheme.onPrimary, width: 1.w),
-        // ),
       ),
     );
   }
